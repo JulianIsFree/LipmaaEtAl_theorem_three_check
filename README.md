@@ -1,0 +1,1 @@
+# LipmaaEtAl_theorem_three_check
