@@ -3,7 +3,7 @@
 #include "theorem3.h"
 #include "hypothesis.h"
 
-#define WORD_LEN 8
+#define WORD_LEN 20
 
 int main()
 {
@@ -19,10 +19,10 @@ int main()
 	words1[0] = 3;
 	words2[0] = 3;
 
-	FILE * fout = fopen("is_sqnc_03_max_sum_bigger.txt", "w");
+	FILE * fout = fopen("check_size_of_set.txt", "w");
 	for (int i = 0; i < WORD_LEN; ++i)
 	{
-		if (is_sqnc_03_sum_max_bigger(fout, words1, words2, i, 1, matricies))
+		if (check_size_of_set(fout, i, matricies))
 			fprintf(fout, "all is good for word_len = %d.\n", i);
 		else
 			fprintf(fout, "results don't match with the hypothesis: word_len = %d.\n", i);

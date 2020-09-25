@@ -215,3 +215,30 @@ double adp_sqnc(int words[], int len, Matrix matricies[])
 
 	return result;
 }
+
+char check_size_of_set(FILE * fout, const size_t n, Matrix matricies[])
+{
+	const size_t max = 1 << n;
+	map<ARR_TYPE, size_t> map;
+	
+	for (size_t i = 0; i < max; ++i)
+	{
+		ARR_TYPE p = adp(n, 0, i, i, matricies);
+		map[p] += 1;
+	}
+	
+	const size_t targetSize = max >> 4;
+	const size_t mapSize = map.size();
+	
+	fprintf(fout, "n=%u target=%u curr=%u\n", n, targetSize, mapSize);
+	for (auto iter = map.begin(); iter != map.end(); ++iter)
+		fprintf(fout, "%u %u\n", iter->first, iter->second);
+	
+	if (n < 4)
+		return 1;
+
+	if (mapSize < targetSize)
+		return 0;
+
+	return 1;
+}

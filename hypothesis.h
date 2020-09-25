@@ -1,4 +1,5 @@
 #pragma once
+#include <map>
 #include "theorem3.h"
 #include "matrix.h"
 
@@ -19,3 +20,4 @@ char is_sqnc_03_max_bigger(FILE * fout, int main_sqnc[], int morph_sqnc[], const
 char is_sqnc_03_sum_max_bigger(FILE * fout, int main_sqnc[], int morph_sqnc[], const int N, const int n, Matrix matricies[]);
 
 double adp_sqnc(int words[], int len, Matrix matricies[]);
+char check_size_of_set(FILE * fout, const size_t n, Matrix matricies[]);
